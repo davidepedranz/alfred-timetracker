@@ -575,7 +575,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./filter "$1"
+				<string>./bin/filter "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -669,7 +669,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./filter "$1"
+				<string>./bin/filter "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
