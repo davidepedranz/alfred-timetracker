@@ -1,0 +1,20 @@
+language: go
+
+go:
+  - 1.13.x
+
+if: tag IS present
+
+script:
+  - VERSION="${TRAVIS_TAG}" ./build.sh
+
+deploy:
+  provider: releases
+  api_key:
+    secure: YL8gSh7T250FNIFmFLdV6ElQy6cBYOxvbiBF1z8Egy3/orAYXTOESLrrK5rDmyerKNyuDJouHERX/dNEORQLGgUBA3TlHaCjoxofLHa6iNsSqVs/0nHJ6KZav1wqbCjRReoIrU/vPNgeMaJmksdgIV0Oog1kdlApJM8/MJvjM97WKSvNZlq7S/UOf3qTEP2ER7uUwozXbKFNShdgZPCT6Bo9cPNfWntgJM3MjAT/JJBo+pMyLS6hEzpYljn4rUHWgyBnjlOExe0hRPyhqgz9SA2KBFoUc3pQInE+LNMred10JafU9gqS4VEuX6MvilrX5MNERCg8AS4tt9e9inp7+WEYRjVCzrZ0AvxgGp3W0u1+7UtwirW1OGss39vh6ybLRTMhyxmKxMDNzTJHEtw/bk6I4+YtQOvRC1y3GlSky2rBfAmK9vBNxQdHFf8pwntrA20HdIZbvpklr92QLP5oSADdVCZPxe7MnViMLVYGb3q7XhRSShCH85h9CPE0OacZj+SBPeGenvTA4Gonfc8XlFySpELIWNRcub6LJX/hqAcHa8qTkS171QRqyh5MMBHKzsPkP0isPQ3aj4b5gut+CJV1/JWrNx+6URz+atCxjmSvIfmkSmcC6jh7ZcIUFdCnAoYo9DmNoqqYQqT4bmaH9q1ICM17DnXhXQVcYkxkr8Q=
+  file: "*.alfredworkflow"
+  file_glob: true
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: davidepedranz/timetracker

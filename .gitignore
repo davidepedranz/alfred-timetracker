@@ -6,3 +6,4 @@ vendor/
 .alfred/bin/
 .alfred/info.plist
 
+*.alfredworkflow
