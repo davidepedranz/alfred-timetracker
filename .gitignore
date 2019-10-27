@@ -1,0 +1,8 @@
+.idea
+!.idea/runConfigurations/
+
+vendor/
+
+.alfred/bin/
+.alfred/info.plist
+
