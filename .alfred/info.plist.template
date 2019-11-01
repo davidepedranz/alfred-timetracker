@@ -865,7 +865,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>TimeTracker will help you to track how you spend your time on Google Calendar. Please check out the GitHub repository for more information: https://github.com/davidepedranz/timetracker</string>
+	<string>TimeTracker will help you to track how you spend your time on Google Calendar. Please check out the GitHub repository for more information: https://github.com/davidepedranz/alfred-timetracker</string>
 	<key>uidata</key>
 	<dict>
 		<key>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</key>
@@ -1037,6 +1037,6 @@
 	<key>version</key>
 	<string>${VERSION}</string>
 	<key>webaddress</key>
-	<string>https://github.com/davidepedranz/timetracker</string>
+	<string>https://github.com/davidepedranz/alfred-timetracker</string>
 </dict>
 </plist>
