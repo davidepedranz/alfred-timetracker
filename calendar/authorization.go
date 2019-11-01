@@ -1,9 +1,11 @@
-package timetracker
+package calendar
 
 import (
 	"context"
+	"crypto/rand"
 	"crypto/sha256"
 	"fmt"
+	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/dvsekhvalnov/jose2go/base64url"
 	"github.com/google/uuid"
 	"github.com/pkg/browser"
@@ -25,7 +27,7 @@ func NewConfig(clientID string) *oauth2.Config {
 	return &oauth2.Config{
 		ClientID:     clientID,
 		ClientSecret: "",
-		RedirectURL:  "http://localhost:" + strconv.Itoa(Port),
+		RedirectURL:  "http://localhost:" + strconv.Itoa(alfred.Port),
 		Scopes:       []string{calendar.CalendarScope},
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  "https://accounts.google.com/o/oauth2/auth",
@@ -51,7 +53,7 @@ func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 		return nil, fmt.Errorf("cannot open a browser to handle the authorization flow: %w", err)
 	}
 
-	res := <-callback("127.0.0.1:" + strconv.Itoa(Port))
+	res := <-callback("127.0.0.1:" + strconv.Itoa(alfred.Port))
 
 	if errorCode := res.values.Get("error"); errorCode != "" {
 		return nil, fmt.Errorf("the user did not grant the required permissions")
@@ -134,4 +136,14 @@ func callback(address string) chan *response {
 	}()
 
 	return responseCh
+}
+
+// TODO: this creates a string longer than the number of bytes
+func randomStringURLSafe(n int) string {
+	b := make([]byte, n)
+	_, err := rand.Read(b)
+	if err != nil {
+		panic("Cannot generate a random string")
+	}
+	return base64url.Encode(b)
 }

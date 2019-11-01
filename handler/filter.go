@@ -1,27 +1,21 @@
-package main
+package handler
 
 import (
 	"fmt"
-	"github.com/davidepedranz/alfred-timetracker/timetracker"
+	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/deanishe/awgo"
 	"time"
 )
 
-func main() {
-	wf := aw.New()
-	wf.Run(func() { run(wf) })
-}
-
-func run(wf *aw.Workflow) {
-	args := wf.Args()
+func DoFilter(wf *aw.Workflow, args []string) {
 	if len(args) != 1 {
-		timetracker.PrintError("Please provide some input 👀", nil)
+		alfred.PrintError("Please provide some input 👀", nil)
 		return
 	}
 
-	tasks, err := timetracker.LoadOngoingTasks(wf)
+	tasks, err := alfred.LoadOngoingTasks(wf)
 	if err != nil {
-		timetracker.PrintError("Cannot load the ongoing tasks, please try again later 🙏", err)
+		alfred.PrintError("Cannot load the ongoing tasks, please try again later 🙏", err)
 		return
 	}
 

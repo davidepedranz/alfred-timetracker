@@ -246,8 +246,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"
-</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -317,8 +316,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"
-</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -368,7 +366,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/stop "$1"</string>
+				<string>./tt stop "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -412,7 +410,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/start "$1"</string>
+				<string>./tt start "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -455,8 +453,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"
-</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -505,7 +502,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -575,8 +572,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"
-</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -605,7 +601,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/cancel "$1"</string>
+				<string>./tt cancel "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -669,8 +665,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./bin/filter "$1"
-</string>
+				<string>./tt filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -741,7 +736,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/authorize "$1"</string>
+				<string>./tt authorize "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -785,7 +780,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./bin/setup "$1"</string>
+				<string>./tt setup "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

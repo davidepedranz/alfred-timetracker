@@ -1,4 +1,4 @@
-package timetracker
+package calendar
 
 import (
 	"context"

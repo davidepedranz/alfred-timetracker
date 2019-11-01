@@ -5,12 +5,8 @@ set -o nounset
 
 archive="TimeTracker-${VERSION}.alfredworkflow"
 
-echo "Building go binaries:"
-for path in ./cmd/*; do
-  d=$(echo "${path}" | sed "s|.*/||")
-  echo "  - ${d}"
-  GOARCH=amd64 GOOS=darwin go build -ldflags "-s -w" -o ".alfred/bin/${d}" "./cmd/${d}"
-done
+echo "Building go binary:"
+GOARCH=amd64 GOOS=darwin go build -ldflags "-s -w" -o ".alfred/tt" .
 
 echo ""
 echo "Crearing archive:"
