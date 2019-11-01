@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"github.com/davidepedranz/alfred-timetracker/timetracker"
 	"github.com/deanishe/awgo"
 	"github.com/google/uuid"
 	"time"
-	"timetracker/timetracker"
 )
 
 func main() {

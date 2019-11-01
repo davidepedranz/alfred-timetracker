@@ -1,4 +1,4 @@
-module timetracker
+module github.com/davidepedranz/alfred-timetracker
 
 go 1.13
 

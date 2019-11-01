@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/davidepedranz/alfred-timetracker/timetracker"
 	"github.com/deanishe/awgo"
 	"time"
-	"timetracker/timetracker"
 )
 
 func main() {

@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/davidepedranz/alfred-timetracker/timetracker"
 	"github.com/deanishe/awgo"
-	"timetracker/timetracker"
 )
 
 func main() {
