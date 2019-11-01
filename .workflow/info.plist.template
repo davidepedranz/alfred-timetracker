@@ -8,6 +8,32 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>03EB60B7-B163-4937-8668-9C2EAFB46529</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72881A83-C511-4C44-AED1-C8285C9485F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</key>
 		<array>
 			<dict>
@@ -47,6 +73,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</key>
+		<array/>
 		<key>52BCEC6F-A7A6-4D01-BAF7-B8C5ABE47010</key>
 		<array>
 			<dict>
@@ -86,6 +114,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5E7A81CE-2A4F-4F82-9742-B739C4C1CF21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5F8174E3-211D-4153-AA09-94C235651D8B</key>
 		<array>
 			<dict>
@@ -95,6 +136,33 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>72881A83-C511-4C44-AED1-C8285C9485F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>846A8807-5BEF-431A-8AAB-231BBE47E197</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>514694D4-A4CF-4C00-846C-9F214DD4FC5D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>514694D4-A4CF-4C00-846C-9F214DD4FC5D</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -689,6 +757,76 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Download in progress. Alfred will show a message then the update is ready. 👀</string>
+				<key>title</key>
+				<string>TimeTracker Update</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>846A8807-5BEF-431A-8AAB-231BBE47E197</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>update</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Looking for updates...</string>
+				<key>script</key>
+				<string>./tt update</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Check if there are updates available</string>
+				<key>title</key>
+				<string>TimeTracker Update</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5E7A81CE-2A4F-4F82-9742-B739C4C1CF21</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -819,6 +957,67 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>install</string>
+						<key>outputlabel</key>
+						<string>install</string>
+						<key>uid</key>
+						<string>514694D4-A4CF-4C00-846C-9F214DD4FC5D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>-</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>72881A83-C511-4C44-AED1-C8285C9485F3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./tt install</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -858,11 +1057,74 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>tt update</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Looking for updates...</string>
+				<key>script</key>
+				<string>./tt update</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Check if there are updates available</string>
+				<key>title</key>
+				<string>TimeTracker Update</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>03EB60B7-B163-4937-8668-9C2EAFB46529</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>TimeTracker will help you to track how you spend your time on Google Calendar. Please check out the GitHub repository for more information: https://github.com/davidepedranz/alfred-timetracker</string>
 	<key>uidata</key>
 	<dict>
+		<key>03EB60B7-B163-4937-8668-9C2EAFB46529</key>
+		<dict>
+			<key>xpos</key>
+			<integer>950</integer>
+			<key>ypos</key>
+			<integer>660</integer>
+		</dict>
+		<key>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1100</integer>
+			<key>ypos</key>
+			<integer>630</integer>
+		</dict>
 		<key>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</key>
 		<dict>
 			<key>xpos</key>
@@ -890,6 +1152,13 @@
 			<integer>485</integer>
 			<key>ypos</key>
 			<integer>660</integer>
+		</dict>
+		<key>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1255</integer>
+			<key>ypos</key>
+			<integer>655</integer>
 		</dict>
 		<key>52BCEC6F-A7A6-4D01-BAF7-B8C5ABE47010</key>
 		<dict>
@@ -919,12 +1188,33 @@
 			<key>ypos</key>
 			<integer>600</integer>
 		</dict>
+		<key>5E7A81CE-2A4F-4F82-9742-B739C4C1CF21</key>
+		<dict>
+			<key>xpos</key>
+			<integer>950</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
 		<key>5F8174E3-211D-4153-AA09-94C235651D8B</key>
 		<dict>
 			<key>xpos</key>
 			<integer>635</integer>
 			<key>ypos</key>
 			<integer>85</integer>
+		</dict>
+		<key>72881A83-C511-4C44-AED1-C8285C9485F3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1170</integer>
+			<key>ypos</key>
+			<integer>620</integer>
+		</dict>
+		<key>846A8807-5BEF-431A-8AAB-231BBE47E197</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1255</integer>
+			<key>ypos</key>
+			<integer>535</integer>
 		</dict>
 		<key>93DB25B4-2942-4B9C-BFA0-686EA0E487A7</key>
 		<dict>
