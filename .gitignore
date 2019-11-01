@@ -3,7 +3,8 @@
 
 vendor/
 
-.alfred/info.plist
+.workflow/info.plist
+.workflow/tt
 *.alfredworkflow
 .bin
 .dev
