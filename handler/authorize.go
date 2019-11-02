@@ -17,7 +17,11 @@ func DoAuthorize(wf *aw.Workflow, _ []string) {
 		alfred.PrintError("Cannot get an access token 😢", err)
 	}
 
-	b, _ := json.Marshal(token)
+	b, err := json.Marshal(token)
+	if err != nil {
+		alfred.PrintError("Cannot serialize the token to JSON 😢", err)
+	}
+
 	if err := wf.Keychain.Set("token", string(b)); err != nil {
 		alfred.PrintError("Cannot store the token in the keychain 😢", err)
 	}

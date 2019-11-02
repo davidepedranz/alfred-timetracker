@@ -40,7 +40,7 @@ func (c *Client) CreateCalendar() (*string, error) {
 	return &id, nil
 }
 
-func (c *Client) InsertEvent(calendarID string, summary string, start *time.Time, end *time.Time) error {
+func (c *Client) InsertEvent(calendarID, summary string, start, end *time.Time) error {
 	call := c.service.Events.Insert(calendarID, &calendar.Event{
 		Summary:               summary,
 		Start:                 &calendar.EventDateTime{DateTime: start.Format(time.RFC3339)},

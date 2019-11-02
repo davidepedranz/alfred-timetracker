@@ -80,6 +80,7 @@ func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 	return token, nil
 }
 
+// nolint:gocognit
 func callback(address string) chan *response {
 	responseCh, shutdownCh, interruptCh := make(chan *response), make(chan bool), make(chan bool)
 	server := &http.Server{Addr: address}

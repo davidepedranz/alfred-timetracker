@@ -28,7 +28,7 @@ func randomStringURLSafe(n int) (string, error) {
 		return "", err
 	}
 
-	//noinspection ALL
+	// noinspection ALL
 	const symbols = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-"
 
 	for i, b := range bytes {

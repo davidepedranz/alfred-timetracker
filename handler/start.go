@@ -16,6 +16,8 @@ func DoStart(wf *aw.Workflow, args []string) {
 	}
 
 	task := alfred.Task{ID: uuid.New().String(), Description: args[0], Start: time.Now()}
+
+	// nolint:errcheck
 	tasks, _ := alfred.LoadOngoingTasks(wf)
 	tasks = append(tasks, task)
 
