@@ -21,14 +21,15 @@ func run(wf *aw.Workflow) {
 	}
 
 	handlers := map[string]func(*aw.Workflow, []string){
-		"authorize": handler.DoAuthorize,
-		"cancel":    handler.DoCancel,
-		"filter":    handler.DoFilter,
-		"setup":     handler.DoSetup,
-		"start":     handler.DoStart,
-		"stop":      handler.DoStop,
-		"update":    handler.DoUpdate,
-		"install":   handler.DoInstall,
+		"authorize":   handler.DoAuthorize,
+		"cancel":      handler.DoCancel,
+		"deauthorize": handler.DoDeauthorize,
+		"filter":      handler.DoFilter,
+		"setup":       handler.DoSetup,
+		"start":       handler.DoStart,
+		"stop":        handler.DoStop,
+		"update":      handler.DoUpdate,
+		"install":     handler.DoInstall,
 	}
 
 	if h, found := handlers[args[0]]; !found {

@@ -47,3 +47,7 @@ func ReadToken(wf *aw.Workflow) (*oauth2.Token, error) {
 
 	return token, nil
 }
+
+func RemoveToken(wf *aw.Workflow) error {
+	return wf.Keychain.Delete(Token)
+}

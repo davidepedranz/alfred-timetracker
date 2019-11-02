@@ -60,6 +60,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3E48281E-4165-4406-9310-3B58ABD45260</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5A6D28A-418A-440C-B188-0C708CC27DB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>42F95B95-A331-450D-A0C9-1B86D5BBF306</key>
 		<array>
 			<dict>
@@ -195,11 +208,37 @@
 		</array>
 		<key>A3C09A99-7F74-41E6-B7E4-37D00035683E</key>
 		<array/>
+		<key>BC720FF2-58E6-48FD-8E03-DB32F4CD3268</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E48281E-4165-4406-9310-3B58ABD45260</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BE506439-0CF5-470B-A92C-36B077A872B9</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>5F8174E3-211D-4153-AA09-94C235651D8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C306DFA0-4FC9-4E5F-9074-877947A0A68E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E48281E-4165-4406-9310-3B58ABD45260</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -757,6 +796,178 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>authorize</string>
+				<key>subtext</key>
+				<string>Authorize access to Google Calendar</string>
+				<key>text</key>
+				<string>TimeTracker Authorize</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9BB9C535-3FCB-41B2-A7E7-A602E1479329</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>deauthorize</string>
+				<key>subtext</key>
+				<string>Remove access from Google Calendar</string>
+				<key>text</key>
+				<string>TimeTracker Deauthorize</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BC720FF2-58E6-48FD-8E03-DB32F4CD3268</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./tt authorize "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5A5DB099-21D7-49A2-94C0-6AC46455F3DE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>TimeTracker Authorize</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5CC3E11F-6B39-4D38-83AE-6885252721E7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>TimeTracker Deuthorize</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D5A6D28A-418A-440C-B188-0C708CC27DB2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./tt deauthorize "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E48281E-4165-4406-9310-3B58ABD45260</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tt deauthorize</string>
+				<key>subtext</key>
+				<string>Remove access from Google Calendar</string>
+				<key>text</key>
+				<string>TimeTracker Deauthorize</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C306DFA0-4FC9-4E5F-9074-877947A0A68E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tt authorize</string>
+				<key>subtext</key>
+				<string>Authorize access to Google Calendar</string>
+				<key>text</key>
+				<string>TimeTracker Authorize</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -842,71 +1053,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>D70FE637-B191-4563-9B9A-2F30DF963C14</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>authorize</string>
-				<key>subtext</key>
-				<string>Authorize access to Google Calendar</string>
-				<key>text</key>
-				<string>TimeTracker Authorize</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>9BB9C535-3FCB-41B2-A7E7-A602E1479329</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./tt authorize "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5A5DB099-21D7-49A2-94C0-6AC46455F3DE</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>TimeTracker Setup</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>5CC3E11F-6B39-4D38-83AE-6885252721E7</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1021,27 +1167,6 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>tt authorize</string>
-				<key>subtext</key>
-				<string>Authorize access to Google Calendar</string>
-				<key>text</key>
-				<string>TimeTracker Authorize</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
 				<string>tt setup</string>
 				<key>subtext</key>
 				<string>Create and setup a new tracking calendar</string>
@@ -1114,16 +1239,16 @@
 		<key>03EB60B7-B163-4937-8668-9C2EAFB46529</key>
 		<dict>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>660</integer>
+			<integer>920</integer>
 		</dict>
 		<key>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1100</integer>
+			<integer>640</integer>
 			<key>ypos</key>
-			<integer>630</integer>
+			<integer>890</integer>
 		</dict>
 		<key>10C5B8E3-E835-459A-B6B8-9DB8F9BBDBC7</key>
 		<dict>
@@ -1146,19 +1271,26 @@
 			<key>ypos</key>
 			<integer>340</integer>
 		</dict>
+		<key>3E48281E-4165-4406-9310-3B58ABD45260</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
 		<key>42F95B95-A331-450D-A0C9-1B86D5BBF306</key>
 		<dict>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>660</integer>
+			<integer>920</integer>
 		</dict>
 		<key>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1255</integer>
+			<integer>795</integer>
 			<key>ypos</key>
-			<integer>655</integer>
+			<integer>915</integer>
 		</dict>
 		<key>52BCEC6F-A7A6-4D01-BAF7-B8C5ABE47010</key>
 		<dict>
@@ -1191,9 +1323,9 @@
 		<key>5E7A81CE-2A4F-4F82-9742-B739C4C1CF21</key>
 		<dict>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>800</integer>
 		</dict>
 		<key>5F8174E3-211D-4153-AA09-94C235651D8B</key>
 		<dict>
@@ -1205,16 +1337,16 @@
 		<key>72881A83-C511-4C44-AED1-C8285C9485F3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1170</integer>
+			<integer>710</integer>
 			<key>ypos</key>
-			<integer>620</integer>
+			<integer>880</integer>
 		</dict>
 		<key>846A8807-5BEF-431A-8AAB-231BBE47E197</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1255</integer>
+			<integer>795</integer>
 			<key>ypos</key>
-			<integer>535</integer>
+			<integer>795</integer>
 		</dict>
 		<key>93DB25B4-2942-4B9C-BFA0-686EA0E487A7</key>
 		<dict>
@@ -1244,12 +1376,26 @@
 			<key>ypos</key>
 			<integer>85</integer>
 		</dict>
+		<key>BC720FF2-58E6-48FD-8E03-DB32F4CD3268</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
 		<key>BE506439-0CF5-470B-A92C-36B077A872B9</key>
 		<dict>
 			<key>xpos</key>
 			<integer>490</integer>
 			<key>ypos</key>
 			<integer>25</integer>
+		</dict>
+		<key>C306DFA0-4FC9-4E5F-9074-877947A0A68E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>660</integer>
 		</dict>
 		<key>C95ABB73-92AB-4578-A46E-9A50E301DF9D</key>
 		<dict>
@@ -1265,12 +1411,19 @@
 			<key>ypos</key>
 			<integer>145</integer>
 		</dict>
+		<key>D5A6D28A-418A-440C-B188-0C708CC27DB2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>790</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
 		<key>D70FE637-B191-4563-9B9A-2F30DF963C14</key>
 		<dict>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>800</integer>
 		</dict>
 		<key>D7DBCACB-B748-4C01-B76A-F3F1464FC04D</key>
 		<dict>
@@ -1282,9 +1435,9 @@
 		<key>DCE3D2B0-589A-4B17-ABF9-34AC6A7C6AAF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>785</integer>
+			<integer>325</integer>
 			<key>ypos</key>
-			<integer>600</integer>
+			<integer>860</integer>
 		</dict>
 		<key>DF3E2C89-FDA2-4DB7-8B5C-F544F0D91EF8</key>
 		<dict>
@@ -1296,9 +1449,9 @@
 		<key>E87012AB-147A-4156-8313-F9C11A7DA15F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>635</integer>
+			<integer>175</integer>
 			<key>ypos</key>
-			<integer>600</integer>
+			<integer>860</integer>
 		</dict>
 		<key>FFE8F463-F16F-45D9-B4A1-A58CF30C88C2</key>
 		<dict>

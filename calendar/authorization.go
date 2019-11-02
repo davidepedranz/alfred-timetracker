@@ -141,3 +141,20 @@ func callback(address string) chan *response {
 
 	return responseCh
 }
+
+func RevokeToken(token *oauth2.Token) error {
+	data := url.Values{"token": {token.RefreshToken}}
+	resp, err := http.PostForm("https://accounts.google.com/o/oauth2/revoke", data)
+
+	if err != nil {
+		return fmt.Errorf("networking error while trying to revoke the token: %w", err)
+	}
+
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("revoke endpoint returned a %d status code", resp.StatusCode)
+	}
+
+	return nil
+}
