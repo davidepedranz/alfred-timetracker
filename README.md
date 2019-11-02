@@ -1,6 +1,6 @@
 # Alfred TimeTracker
 
-[![Build Status](https://travis-ci.org/davidepedranz/alfred-timetracker.svg?branch=master)](https://travis-ci.org/davidepedranz/alfred-timetracker)
+[![Build Status](https://travis-ci.com/davidepedranz/alfred-timetracker.svg?branch=master)](https://travis-ci.com/davidepedranz/alfred-timetracker)
 [![GolangCI](https://golangci.com/badges/github.com/davidepedranz/alfred-timetracker.svg)](https://golangci.com/r/github.com/davidepedranz/alfred-timetracker)
 
 Track your time on Google Calendar 📅 using Alfred.
