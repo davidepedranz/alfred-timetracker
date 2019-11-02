@@ -14,14 +14,12 @@ func DoAuthorize(wf *aw.Workflow, _ []string) {
 
 	token, err := calendar.GetAccessToken(config)
 	if err != nil {
-		alfred.PrintError("Cannot get an access token 😢", nil)
-		return
+		alfred.PrintError("Cannot get an access token 😢", err)
 	}
 
 	b, _ := json.Marshal(token)
 	if err := wf.Keychain.Set("token", string(b)); err != nil {
-		alfred.PrintError("Cannot store the token in the keychain 😢", nil)
-		return
+		alfred.PrintError("Cannot store the token in the keychain 😢", err)
 	}
 
 	fmt.Print("Token stored successfully 😎")

@@ -2,7 +2,6 @@ package calendar
 
 import (
 	"context"
-	"crypto/rand"
 	"crypto/sha256"
 	"fmt"
 	"log"
@@ -40,7 +39,11 @@ func NewConfig(clientID string) *oauth2.Config {
 func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 	state := uuid.New().String()
 
-	challengeRaw := randomStringURLSafe(96)
+	challengeRaw, err := randomStringURLSafe(96)
+	if err != nil {
+		return nil, fmt.Errorf("cannot generate a random string for the challenge: %w", err)
+	}
+
 	challengeSha256 := sha256.Sum256([]byte(challengeRaw))
 	challengeURLEncoded := base64url.Encode(challengeSha256[:])
 
@@ -136,14 +139,4 @@ func callback(address string) chan *response {
 	}()
 
 	return responseCh
-}
-
-// TODO: this creates a string longer than the number of bytes
-func randomStringURLSafe(n int) string {
-	b := make([]byte, n)
-	if _, err := rand.Read(b); err != nil {
-		panic("Cannot generate a random string")
-	}
-
-	return base64url.Encode(b)
 }

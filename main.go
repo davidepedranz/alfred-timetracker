@@ -17,9 +17,7 @@ func main() {
 func run(wf *aw.Workflow) {
 	args := wf.Args()
 	if len(args) == 0 {
-		// TODO: change error message, consider using native awgo method
 		alfred.PrintError("Please provide some input 👀", nil)
-		return
 	}
 
 	handlers := map[string]func(*aw.Workflow, []string){
