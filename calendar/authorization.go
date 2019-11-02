@@ -36,7 +36,7 @@ func NewConfig(clientID string) *oauth2.Config {
 	}
 }
 
-func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
+func GetToken(config *oauth2.Config) (*oauth2.Token, error) {
 	state := uuid.New().String()
 
 	challengeRaw, err := randomStringURLSafe(96)

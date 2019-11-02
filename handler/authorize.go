@@ -12,7 +12,7 @@ import (
 func DoAuthorize(wf *aw.Workflow, _ []string) {
 	config := calendar.NewConfig(wf.Config.GetString(alfred.ClientID))
 
-	token, err := calendar.GetAccessToken(config)
+	token, err := calendar.GetToken(config)
 	if err != nil {
 		alfred.PrintError("Cannot get an access token 😢", err)
 	}
