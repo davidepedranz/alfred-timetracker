@@ -1,12 +1,14 @@
 package handler
 
 import (
-	"github.com/deanishe/awgo"
 	"log"
+
+	aw "github.com/deanishe/awgo"
 )
 
 func DoUpdate(wf *aw.Workflow, _ []string) {
 	log.Println("Checking for updates...")
+
 	if err := wf.CheckForUpdate(); err != nil {
 		wf.FatalError(err)
 	}
@@ -18,7 +20,6 @@ func DoUpdate(wf *aw.Workflow, _ []string) {
 			Subtitle("Please press Enter to install...").
 			Arg("install").
 			Valid(true)
-
 	} else {
 		wf.
 			NewItem("Congratulations 🎉").

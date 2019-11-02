@@ -5,17 +5,18 @@ import (
 	"crypto/rand"
 	"crypto/sha256"
 	"fmt"
+	"log"
+	"net/http"
+	"net/url"
+	"strconv"
+	"time"
+
 	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/dvsekhvalnov/jose2go/base64url"
 	"github.com/google/uuid"
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/calendar/v3"
-	"log"
-	"net/http"
-	"net/url"
-	"strconv"
-	"time"
 )
 
 type response struct {
@@ -41,14 +42,15 @@ func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 
 	challengeRaw := randomStringURLSafe(96)
 	challengeSha256 := sha256.Sum256([]byte(challengeRaw))
-	challengeUrlEncoded := base64url.Encode(challengeSha256[:])
+	challengeURLEncoded := base64url.Encode(challengeSha256[:])
 
-	codeChallenge := oauth2.SetAuthURLParam("code_challenge", challengeUrlEncoded)
+	codeChallenge := oauth2.SetAuthURLParam("code_challenge", challengeURLEncoded)
 	codeChallengeMethod := oauth2.SetAuthURLParam("code_challenge_method", "S256")
 
 	authURL := config.AuthCodeURL(state, oauth2.AccessTypeOffline, codeChallenge, codeChallengeMethod)
 
 	log.Println("open the browser and start the authorization server")
+
 	if err := browser.OpenURL(authURL); err != nil {
 		return nil, fmt.Errorf("cannot open a browser to handle the authorization flow: %w", err)
 	}
@@ -67,6 +69,7 @@ func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 	code := res.values.Get("code")
 	verifier := oauth2.SetAuthURLParam("code_verifier", challengeRaw)
 	token, err := config.Exchange(context.Background(), code, verifier)
+
 	if err != nil {
 		return nil, fmt.Errorf("cannot exchange the OAuth 2 code for an access token: %w", err)
 	}
@@ -75,11 +78,9 @@ func GetAccessToken(config *oauth2.Config) (*oauth2.Token, error) {
 }
 
 func callback(address string) chan *response {
-	responseCh := make(chan *response)
-	shutdownCh := make(chan bool)
-	interruptCh := make(chan bool)
-
+	responseCh, shutdownCh, interruptCh := make(chan *response), make(chan bool), make(chan bool)
 	server := &http.Server{Addr: address}
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 
@@ -90,8 +91,7 @@ func callback(address string) chan *response {
 			msg = "Something went wrong with the authorization workflow. Please try again."
 		}
 
-		_, err := w.Write([]byte(msg))
-		if err != nil {
+		if _, err := w.Write([]byte(msg)); err != nil {
 			log.Printf("http.ResponseWriter write failed: %v", err)
 		}
 
@@ -141,9 +141,9 @@ func callback(address string) chan *response {
 // TODO: this creates a string longer than the number of bytes
 func randomStringURLSafe(n int) string {
 	b := make([]byte, n)
-	_, err := rand.Read(b)
-	if err != nil {
+	if _, err := rand.Read(b); err != nil {
 		panic("Cannot generate a random string")
 	}
+
 	return base64url.Encode(b)
 }

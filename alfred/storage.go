@@ -3,9 +3,10 @@ package alfred
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/deanishe/awgo"
-	"golang.org/x/oauth2"
 	"time"
+
+	aw "github.com/deanishe/awgo"
+	"golang.org/x/oauth2"
 )
 
 type Task struct {
@@ -19,6 +20,7 @@ func LoadOngoingTasks(wf *aw.Workflow) ([]Task, error) {
 	if err := wf.Data.LoadJSON(OngoingTasks, &tasks); err != nil {
 		return nil, fmt.Errorf("error loading the ongoing tasks: %w", err)
 	}
+
 	return tasks, nil
 }
 
@@ -26,6 +28,7 @@ func StoreOngoingTasks(wf *aw.Workflow, tasks []Task) error {
 	if err := wf.Data.StoreJSON(OngoingTasks, tasks); err != nil {
 		return fmt.Errorf("error storing the ongoing tasks: %w", err)
 	}
+
 	return nil
 }
 

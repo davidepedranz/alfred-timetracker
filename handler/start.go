@@ -2,10 +2,11 @@ package handler
 
 import (
 	"fmt"
-	"github.com/davidepedranz/alfred-timetracker/alfred"
-	"github.com/deanishe/awgo"
-	"github.com/google/uuid"
 	"time"
+
+	"github.com/davidepedranz/alfred-timetracker/alfred"
+	aw "github.com/deanishe/awgo"
+	"github.com/google/uuid"
 )
 
 func DoStart(wf *aw.Workflow, args []string) {

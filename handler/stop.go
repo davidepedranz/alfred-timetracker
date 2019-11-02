@@ -3,10 +3,11 @@ package handler
 import (
 	"context"
 	"fmt"
+	"time"
+
 	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/davidepedranz/alfred-timetracker/calendar"
-	"github.com/deanishe/awgo"
-	"time"
+	aw "github.com/deanishe/awgo"
 )
 
 func DoStop(wf *aw.Workflow, args []string) {
@@ -46,7 +47,8 @@ func DoStop(wf *aw.Workflow, args []string) {
 	}
 
 	clientID := wf.Config.Get(alfred.ClientID)
-	client, err := calendar.NewClient(calendar.NewConfig(clientID), token, context.Background())
+	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
+
 	if err != nil {
 		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
 		return
@@ -54,6 +56,7 @@ func DoStop(wf *aw.Workflow, args []string) {
 
 	task := tasks[index]
 	now := time.Now()
+
 	if err := client.InsertEvent(calendarID, task.Description, &task.Start, &now); err != nil {
 		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
 		return
