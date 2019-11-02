@@ -3,9 +3,10 @@ package handler
 import (
 	"encoding/json"
 	"fmt"
+
 	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/davidepedranz/alfred-timetracker/calendar"
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 )
 
 func DoAuthorize(wf *aw.Workflow, _ []string) {

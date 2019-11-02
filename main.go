@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/davidepedranz/alfred-timetracker/handler"
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
 )
 
@@ -33,8 +33,7 @@ func run(wf *aw.Workflow) {
 		"install":   handler.DoInstall,
 	}
 
-	cmd := args[0]
-	if h, found := handlers[cmd]; !found {
+	if h, found := handlers[args[0]]; !found {
 		alfred.PrintError("Command not recognized", nil)
 	} else {
 		h(wf, args[1:])

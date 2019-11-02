@@ -2,8 +2,9 @@ package handler
 
 import (
 	"fmt"
+
 	"github.com/davidepedranz/alfred-timetracker/alfred"
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 )
 
 func DoCancel(wf *aw.Workflow, args []string) {

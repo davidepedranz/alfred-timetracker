@@ -10,5 +10,6 @@ func search(tasks []alfred.Task, id string) int {
 			return index
 		}
 	}
+
 	return -1
 }

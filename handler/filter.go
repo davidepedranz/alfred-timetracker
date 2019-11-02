@@ -2,9 +2,10 @@ package handler
 
 import (
 	"fmt"
-	"github.com/davidepedranz/alfred-timetracker/alfred"
-	"github.com/deanishe/awgo"
 	"time"
+
+	"github.com/davidepedranz/alfred-timetracker/alfred"
+	aw "github.com/deanishe/awgo"
 )
 
 func DoFilter(wf *aw.Workflow, args []string) {
@@ -28,7 +29,7 @@ func DoFilter(wf *aw.Workflow, args []string) {
 	}
 
 	for _, task := range tasks {
-		duration := time.Now().Sub(task.Start)
+		duration := time.Since(task.Start)
 		wf.
 			NewItem(task.Description).
 			Subtitle(formatDuration(duration)).

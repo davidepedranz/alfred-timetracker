@@ -3,9 +3,10 @@ package handler
 import (
 	"context"
 	"fmt"
+
 	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/davidepedranz/alfred-timetracker/calendar"
-	"github.com/deanishe/awgo"
+	aw "github.com/deanishe/awgo"
 )
 
 func DoSetup(wf *aw.Workflow, _ []string) {
@@ -16,7 +17,8 @@ func DoSetup(wf *aw.Workflow, _ []string) {
 	}
 
 	clientID := wf.Config.Get(alfred.ClientID)
-	client, err := calendar.NewClient(calendar.NewConfig(clientID), token, context.Background())
+	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
+
 	if err != nil {
 		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
 		return
