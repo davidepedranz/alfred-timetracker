@@ -24,7 +24,7 @@ func DoStop(wf *aw.Workflow, args []string) {
 
 	calendarID := wf.Config.Get(alfred.CalendarID)
 	if calendarID == "" {
-		alfred.PrintError("Please setup your tracking calendar with `tt setup` first 👀", err)
+		alfred.PrintError("Please setup your tracking calendar with `tt setup` first 👀", nil)
 		return
 	}
 
@@ -36,7 +36,7 @@ func DoStop(wf *aw.Workflow, args []string) {
 
 	index := search(tasks, args[0])
 	if index == -1 {
-		alfred.PrintError("Cannot find the provided task, maybe it was already stopped? 🤨", err)
+		alfred.PrintError("Cannot find the provided task, maybe it was already stopped? 🤨", nil)
 		return
 	}
 
