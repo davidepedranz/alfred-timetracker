@@ -22,15 +22,16 @@ This workflow allows you to leverage Alfred's power to track your work easily.
 
 ## Usage
 
-| Command      | Explanation                                                         |
-| ------------ | ------------------------------------------------------------------- |
-| tt authorize | Authorize Alfred to access your Google Calendar.                    |
-| tt setup     | Create a `Tracking` calendar and store its ID in the configuration. |
-| tt start     | Start tracking a new task.                                          |
-| tt stop      | Stop tracking an ongoing task and add it to Google Calendar.        |
-| tt list      | List the ongoing tasks.                                             |
-| tt cancel    | Cancel an ongoing task.                                             |
-| tt update    | Check if there are updates available.                               |
+| Command        | Explanation                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| tt authorize   | Authorize Alfred to access your Google Calendar.                    |
+| tt deauthorize | Revoke the access from your Google Calendar.                        |
+| tt setup       | Create a `Tracking` calendar and store its ID in the configuration. |
+| tt start       | Start tracking a new task.                                          |
+| tt stop        | Stop tracking an ongoing task and add it to Google Calendar.        |
+| tt list        | List the ongoing tasks.                                             |
+| tt cancel      | Cancel an ongoing task.                                             |
+| tt update      | Check if there are updates available.                               |
 
 *Pro trick*: you can omit the `tt` prefix.
 
