@@ -6,6 +6,9 @@ go:
 if: tag IS present
 
 script:
+  - go test ./...
+
+after_success:
   - VERSION="${TRAVIS_TAG}" ./build.sh
 
 deploy:
