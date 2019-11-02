@@ -7,7 +7,10 @@ script:
   - go test ./...
 
 after_success:
-  - '[[ -v TRAVIS_TAG ]] && VERSION="${TRAVIS_TAG}" ./build.sh'
+  - |
+    if [ -n "${TRAVIS_TAG}" ]; then
+      VERSION="${TRAVIS_TAG}" ./build.sh
+    fi
 
 deploy:
   provider: releases
