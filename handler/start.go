@@ -9,10 +9,9 @@ import (
 	"github.com/google/uuid"
 )
 
-func DoStart(wf *aw.Workflow, args []string) {
+func DoStart(wf *aw.Workflow, args []string) (string, error) {
 	if len(args) != 1 {
-		alfred.PrintError("Please provide some input 👀", nil)
-		return
+		return "", fmt.Errorf("please provide some input 👀")
 	}
 
 	task := alfred.Task{ID: uuid.New().String(), Description: args[0], Start: time.Now()}
@@ -22,9 +21,8 @@ func DoStart(wf *aw.Workflow, args []string) {
 	tasks = append(tasks, task)
 
 	if err := alfred.StoreOngoingTasks(wf, tasks); err != nil {
-		alfred.PrintError("Cannot store the new task, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot store the new task, please try again later 🙏 (%w)", err)
 	}
 
-	fmt.Print("Task started, remember to stop it 😉")
+	return "Task started, remember to stop it 😉", nil
 }

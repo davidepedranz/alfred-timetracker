@@ -48,6 +48,10 @@ func ReadToken(wf *aw.Workflow) (*oauth2.Token, error) {
 	return token, nil
 }
 
+func WriteToken(wf *aw.Workflow, token string) error {
+	return wf.Keychain.Set(Token, token)
+}
+
 func RemoveToken(wf *aw.Workflow) error {
 	return wf.Keychain.Delete(Token)
 }

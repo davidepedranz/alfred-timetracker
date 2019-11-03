@@ -8,16 +8,15 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoFilter(wf *aw.Workflow, args []string) {
+// nolint:unparam
+func DoFilter(wf *aw.Workflow, args []string) (string, error) {
 	if len(args) != 1 {
-		alfred.PrintError("Please provide some input 👀", nil)
-		return
+		return "", fmt.Errorf("please provide some input 👀")
 	}
 
 	tasks, err := alfred.LoadOngoingTasks(wf)
 	if err != nil {
-		alfred.PrintError("Cannot load the ongoing tasks, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot load the ongoing tasks, please try again later 🙏 (%w)", err)
 	}
 
 	if len(tasks) == 0 {
@@ -38,6 +37,8 @@ func DoFilter(wf *aw.Workflow, args []string) {
 	}
 
 	wf.SendFeedback()
+
+	return "", nil
 }
 
 func formatDuration(d time.Duration) string {

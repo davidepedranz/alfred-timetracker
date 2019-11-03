@@ -7,29 +7,25 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoCancel(wf *aw.Workflow, args []string) {
+func DoCancel(wf *aw.Workflow, args []string) (string, error) {
 	if len(args) != 1 {
-		alfred.PrintError("Please provide some input 👀", nil)
-		return
+		return "", fmt.Errorf("please provide some input 👀")
 	}
 
 	tasks, err := alfred.LoadOngoingTasks(wf)
 	if err != nil {
-		alfred.PrintError("Cannot load the ongoing tasks, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot load the ongoing tasks, please try again later 🙏 (%w)", err)
 	}
 
 	index := search(tasks, args[0])
 	if index == -1 {
-		alfred.PrintError("Cannot find the provided task, maybe it was already stopped? 🤨", err)
-		return
+		return "", fmt.Errorf("cannot find the provided task, maybe it was already stopped? 🤨")
 	}
 
 	remaining := append(tasks[:index], tasks[index+1:]...)
 	if err := alfred.StoreOngoingTasks(wf, remaining); err != nil {
-		alfred.PrintError("Cannot store the left tasks, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot store the left tasks, please try again later 🙏 (%w)", err)
 	}
 
-	fmt.Print("Task canceled ❌")
+	return "Task canceled ❌", nil
 }

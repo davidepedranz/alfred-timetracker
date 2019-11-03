@@ -3,14 +3,16 @@ package handler
 import (
 	"fmt"
 
-	"github.com/davidepedranz/alfred-timetracker/alfred"
 	aw "github.com/deanishe/awgo"
 )
 
-func DoInstall(wf *aw.Workflow, _ []string) {
+// nolint:unparam
+func DoInstall(wf *aw.Workflow, _ []string) (string, error) {
 	fmt.Print("Downloading update...")
 
 	if err := wf.InstallUpdate(); err != nil {
-		alfred.PrintError("Error while downloading the update", err)
+		return "", fmt.Errorf("error while downloading the update (%w)", err)
 	}
+
+	return "", nil
 }

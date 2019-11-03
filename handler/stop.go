@@ -10,57 +10,49 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoStop(wf *aw.Workflow, args []string) {
+func DoStop(wf *aw.Workflow, args []string) (string, error) {
 	if len(args) != 1 {
-		alfred.PrintError("Please provide some input 👀", nil)
-		return
+		return "", fmt.Errorf("please provide some input 👀")
 	}
 
 	token, err := alfred.ReadToken(wf)
 	if err != nil {
-		alfred.PrintError("Please authorize TimeTracker with `tt authorize` first 👀", err)
-		return
+		return "", fmt.Errorf("please authorize with `tt authorize` first 👀 (%w)", err)
 	}
 
 	calendarID := wf.Config.Get(alfred.CalendarID)
 	if calendarID == "" {
-		alfred.PrintError("Please setup your tracking calendar with `tt setup` first 👀", nil)
-		return
+		return "", fmt.Errorf("please setup your tracking calendar with `tt setup` first 👀")
 	}
 
 	tasks, err := alfred.LoadOngoingTasks(wf)
 	if err != nil {
-		alfred.PrintError("Cannot load the ongoing tasks, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot load the ongoing tasks, please try again later 🙏 (%w)", err)
 	}
 
 	index := search(tasks, args[0])
 	if index == -1 {
-		alfred.PrintError("Cannot find the provided task, maybe it was already stopped? 🤨", nil)
-		return
+		return "", fmt.Errorf("cannot find the provided task, maybe it was already stopped? 🤨")
 	}
 
 	remaining := append(tasks[:index], tasks[index+1:]...)
 	if err := alfred.StoreOngoingTasks(wf, remaining); err != nil {
-		alfred.PrintError("Cannot store the left tasks, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot store the left tasks, please try again later 🙏 (%w)", err)
 	}
 
 	clientID := wf.Config.Get(alfred.ClientID)
 	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
 
 	if err != nil {
-		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
 	task := tasks[index]
 	now := time.Now()
 
 	if err := client.InsertEvent(calendarID, task.Description, &task.Start, &now); err != nil {
-		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
-	fmt.Print("Stored in your calendar 📅")
+	return "Stored in your calendar 📅", nil
 }

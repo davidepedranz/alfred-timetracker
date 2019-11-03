@@ -1,7 +1,11 @@
 package main
 
 import (
-	"github.com/davidepedranz/alfred-timetracker/alfred"
+	"fmt"
+	"log"
+	"os"
+	"unicode"
+
 	"github.com/davidepedranz/alfred-timetracker/handler"
 	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
@@ -17,10 +21,10 @@ func main() {
 func run(wf *aw.Workflow) {
 	args := wf.Args()
 	if len(args) == 0 {
-		alfred.PrintError("Please provide some input 👀", nil)
+		exitWithError("please provide some input 👀")
 	}
 
-	handlers := map[string]func(*aw.Workflow, []string){
+	handlers := map[string]func(*aw.Workflow, []string) (string, error){
 		"authorize":   handler.DoAuthorize,
 		"cancel":      handler.DoCancel,
 		"deauthorize": handler.DoDeauthorize,
@@ -32,9 +36,28 @@ func run(wf *aw.Workflow) {
 		"install":     handler.DoInstall,
 	}
 
-	if h, found := handlers[args[0]]; !found {
-		alfred.PrintError("Command not recognized", nil)
-	} else {
-		h(wf, args[1:])
+	h, found := handlers[args[0]]
+	if !found {
+		exitWithError("command not recognized 👀")
 	}
+
+	msg, err := h(wf, args[:1])
+	if err != nil {
+		exitWithError(err.Error())
+		os.Exit(1)
+	}
+
+	if msg != "" {
+		fmt.Print(msg)
+	}
+}
+
+func exitWithError(msg string) {
+	fmt.Print(capitalize(msg))
+	log.Print(msg)
+	os.Exit(1)
+}
+
+func capitalize(msg string) string {
+	return string(unicode.ToUpper(rune(msg[0]))) + msg[1:]
 }

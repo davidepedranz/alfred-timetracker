@@ -9,22 +9,22 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoAuthorize(wf *aw.Workflow, _ []string) {
+func DoAuthorize(wf *aw.Workflow, _ []string) (string, error) {
 	config := calendar.NewConfig(wf.Config.GetString(alfred.ClientID))
 
 	token, err := calendar.GetToken(config)
 	if err != nil {
-		alfred.PrintError("Cannot get an access token 😢", err)
+		return "", fmt.Errorf("cannot get an access token 😢 (%w)", err)
 	}
 
 	b, err := json.Marshal(token)
 	if err != nil {
-		alfred.PrintError("Cannot serialize the token to JSON 😢", err)
+		return "", fmt.Errorf("cannot serialize the token to JSON 😢 (%w)", err)
 	}
 
-	if err := wf.Keychain.Set("token", string(b)); err != nil {
-		alfred.PrintError("Cannot store the token in the keychain 😢", err)
+	if err := alfred.WriteToken(wf, string(b)); err != nil {
+		return "", fmt.Errorf("cannot store the token in the keychain 😢 (%w)", err)
 	}
 
-	fmt.Print("Token stored successfully 😎")
+	return "Token stored successfully 😎", nil
 }

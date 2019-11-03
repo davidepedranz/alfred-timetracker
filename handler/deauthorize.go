@@ -8,19 +8,18 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoDeauthorize(wf *aw.Workflow, _ []string) {
+func DoDeauthorize(wf *aw.Workflow, _ []string) (string, error) {
 	token, err := alfred.ReadToken(wf)
 	if err != nil {
-		alfred.PrintError("TimeTracker already deauthorized 👀", err)
-		return
+		return "", fmt.Errorf("already deauthorized 👀 (%w)", err)
 	}
 
 	if err := calendar.RevokeToken(token); err != nil {
-		alfred.PrintError("Error while trying to deauthorize TimeTracker, please try again later 🙏", err)
+		return "", fmt.Errorf("error during deauthorization, please try again later 🙏 (%w)", err)
 	}
 
 	// nolint:errcheck
 	_ = alfred.RemoveToken(wf)
 
-	fmt.Print("TimeTracker deauthorized successfully 😎")
+	return "TimeTracker deauthorized successfully 😎", nil
 }

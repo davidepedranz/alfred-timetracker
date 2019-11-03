@@ -1,16 +1,18 @@
 package handler
 
 import (
+	"fmt"
 	"log"
 
 	aw "github.com/deanishe/awgo"
 )
 
-func DoUpdate(wf *aw.Workflow, _ []string) {
+// nolint:unparam
+func DoUpdate(wf *aw.Workflow, _ []string) (string, error) {
 	log.Println("Checking for updates...")
 
 	if err := wf.CheckForUpdate(); err != nil {
-		wf.FatalError(err)
+		return "", fmt.Errorf("unknown error during the update (%w)", err)
 	}
 
 	if wf.UpdateAvailable() {
@@ -28,4 +30,6 @@ func DoUpdate(wf *aw.Workflow, _ []string) {
 	}
 
 	wf.SendFeedback()
+
+	return "", nil
 }

@@ -9,31 +9,27 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-func DoSetup(wf *aw.Workflow, _ []string) {
+func DoSetup(wf *aw.Workflow, _ []string) (string, error) {
 	token, err := alfred.ReadToken(wf)
 	if err != nil {
-		alfred.PrintError("Please authorize TimeTracker with `tt authorize` first 👀", err)
-		return
+		return "", fmt.Errorf("please authorize TimeTracker with `tt authorize` first 👀 (%w)", err)
 	}
 
 	clientID := wf.Config.Get(alfred.ClientID)
 	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
 
 	if err != nil {
-		alfred.PrintError("Something wrong happened, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
 	id, err := client.CreateCalendar()
 	if err != nil {
-		alfred.PrintError("Could not create the calendar, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("could not create the calendar, please try again later 🙏 (%w)", err)
 	}
 
 	if err := wf.Config.Set(alfred.CalendarID, *id, false).Do(); err != nil {
-		alfred.PrintError("Cannot save the configuration in Alfred, please try again later 🙏", err)
-		return
+		return "", fmt.Errorf("cannot save the configuration in Alfred, please try again later 🙏 (%w)", err)
 	}
 
-	fmt.Print("Calendar created successfully 📅")
+	return "Calendar created successfully 📅", nil
 }
