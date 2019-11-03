@@ -47,6 +47,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>28616C3D-67AB-401C-A652-20A88AA46D18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7567284C-8CF1-41F5-92BA-CDE48DC7F8E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2C7920D5-667A-48E1-B939-16B7C65E355E</key>
 		<array>
 			<dict>
@@ -176,6 +189,19 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>514694D4-A4CF-4C00-846C-9F214DD4FC5D</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7567284C-8CF1-41F5-92BA-CDE48DC7F8E0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>401CE6F2-732F-4EC9-91A1-7E681E904187</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -314,6 +340,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FA766B2C-6C89-4B54-959F-9354AD2A3D3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7567284C-8CF1-41F5-92BA-CDE48DC7F8E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Davide Pedranz</string>
@@ -325,55 +364,6 @@
 	<string>TimeTracker</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>stop</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading tasks...</string>
-				<key>script</key>
-				<string>./tt filter "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Stop an ongoing task and store it in Google Calendar</string>
-				<key>title</key>
-				<string>TimeTracker Stop</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>BE506439-0CF5-470B-A92C-36B077A872B9</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -447,6 +437,55 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>stop</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading tasks...</string>
+				<key>script</key>
+				<string>./tt filter "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Stop an ongoing task and store it in Google Calendar</string>
+				<key>title</key>
+				<string>TimeTracker Stop</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BE506439-0CF5-470B-A92C-36B077A872B9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -491,27 +530,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>TimeTracker Start</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>FFE8F463-F16F-45D9-B4A1-A58CF30C88C2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -531,6 +549,27 @@
 			<string>D7DBCACB-B748-4C01-B76A-F3F1464FC04D</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>TimeTracker Start</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>FFE8F463-F16F-45D9-B4A1-A58CF30C88C2</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -580,6 +619,27 @@
 			<string>A3C09A99-7F74-41E6-B7E4-37D00035683E</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tt start</string>
+				<key>subtext</key>
+				<string>Start a new task</string>
+				<key>text</key>
+				<string>TimeTracker Start</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5634CEE7-BF2A-4FFF-977C-433525FF116F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -636,18 +696,18 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>tt start</string>
+				<string>track</string>
 				<key>subtext</key>
-				<string>Start a new task</string>
+				<string>Track a new task with already known duration</string>
 				<key>text</key>
-				<string>TimeTracker Start</string>
+				<string>TimeTracker Track</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>5634CEE7-BF2A-4FFF-977C-433525FF116F</string>
+			<string>FA766B2C-6C89-4B54-959F-9354AD2A3D3C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -703,6 +763,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>TimeTracker Cancel</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>394D6817-24ED-4B3D-9010-42BC9C783DD6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -735,12 +816,56 @@
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>TimeTracker Cancel</string>
+				<string>TimeTracker Track</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>394D6817-24ED-4B3D-9010-42BC9C783DD6</string>
+			<string>401CE6F2-732F-4EC9-91A1-7E681E904187</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./tt track "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7567284C-8CF1-41F5-92BA-CDE48DC7F8E0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tt track</string>
+				<key>subtext</key>
+				<string>Track a new task with already known duration</string>
+				<key>text</key>
+				<string>TimeTracker Track</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>28616C3D-67AB-401C-A652-20A88AA46D18</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -870,12 +995,12 @@
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>TimeTracker Authorize</string>
+				<string>TimeTracker Deuthorize</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>5CC3E11F-6B39-4D38-83AE-6885252721E7</string>
+			<string>D5A6D28A-418A-440C-B188-0C708CC27DB2</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -891,12 +1016,12 @@
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>TimeTracker Deuthorize</string>
+				<string>TimeTracker Authorize</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>D5A6D28A-418A-440C-B188-0C708CC27DB2</string>
+			<string>5CC3E11F-6B39-4D38-83AE-6885252721E7</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -989,6 +1114,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>setup</string>
+				<key>subtext</key>
+				<string>Create and setup a new tracking calendar</string>
+				<key>text</key>
+				<string>TimeTracker Setup</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D70FE637-B191-4563-9B9A-2F30DF963C14</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1038,21 +1184,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>setup</string>
-				<key>subtext</key>
-				<string>Create and setup a new tracking calendar</string>
-				<key>text</key>
-				<string>TimeTracker Setup</string>
-				<key>withspace</key>
+				<key>lastpathcomponent</key>
 				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>TimeTracker Setup</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>D70FE637-B191-4563-9B9A-2F30DF963C14</string>
+			<string>DCE3D2B0-589A-4B17-ABF9-34AC6A7C6AAF</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1078,27 +1224,6 @@
 			<string>E87012AB-147A-4156-8313-F9C11A7DA15F</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>TimeTracker Setup</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>DCE3D2B0-589A-4B17-ABF9-34AC6A7C6AAF</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1239,14 +1364,14 @@
 		<key>03EB60B7-B163-4937-8668-9C2EAFB46529</key>
 		<dict>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>920</integer>
 		</dict>
 		<key>07446AF5-0DA5-49F9-9CEC-1D4CF982DB23</key>
 		<dict>
 			<key>xpos</key>
-			<integer>640</integer>
+			<integer>635</integer>
 			<key>ypos</key>
 			<integer>890</integer>
 		</dict>
@@ -1256,6 +1381,13 @@
 			<integer>25</integer>
 			<key>ypos</key>
 			<integer>660</integer>
+		</dict>
+		<key>28616C3D-67AB-401C-A652-20A88AA46D18</key>
+		<dict>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>400</integer>
 		</dict>
 		<key>2C7920D5-667A-48E1-B939-16B7C65E355E</key>
 		<dict>
@@ -1274,9 +1406,16 @@
 		<key>3E48281E-4165-4406-9310-3B58ABD45260</key>
 		<dict>
 			<key>xpos</key>
-			<integer>640</integer>
+			<integer>635</integer>
 			<key>ypos</key>
 			<integer>600</integer>
+		</dict>
+		<key>401CE6F2-732F-4EC9-91A1-7E681E904187</key>
+		<dict>
+			<key>xpos</key>
+			<integer>785</integer>
+			<key>ypos</key>
+			<integer>345</integer>
 		</dict>
 		<key>42F95B95-A331-450D-A0C9-1B86D5BBF306</key>
 		<dict>
@@ -1288,7 +1427,7 @@
 		<key>4D00588A-7DAB-4562-9A98-CB95FC6DE22F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>785</integer>
 			<key>ypos</key>
 			<integer>915</integer>
 		</dict>
@@ -1323,7 +1462,7 @@
 		<key>5E7A81CE-2A4F-4F82-9742-B739C4C1CF21</key>
 		<dict>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>800</integer>
 		</dict>
@@ -1337,14 +1476,21 @@
 		<key>72881A83-C511-4C44-AED1-C8285C9485F3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>710</integer>
+			<integer>700</integer>
 			<key>ypos</key>
 			<integer>880</integer>
+		</dict>
+		<key>7567284C-8CF1-41F5-92BA-CDE48DC7F8E0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>635</integer>
+			<key>ypos</key>
+			<integer>345</integer>
 		</dict>
 		<key>846A8807-5BEF-431A-8AAB-231BBE47E197</key>
 		<dict>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>785</integer>
 			<key>ypos</key>
 			<integer>795</integer>
 		</dict>
@@ -1379,7 +1525,7 @@
 		<key>BC720FF2-58E6-48FD-8E03-DB32F4CD3268</key>
 		<dict>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -1393,7 +1539,7 @@
 		<key>C306DFA0-4FC9-4E5F-9074-877947A0A68E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>485</integer>
 			<key>ypos</key>
 			<integer>660</integer>
 		</dict>
@@ -1414,7 +1560,7 @@
 		<key>D5A6D28A-418A-440C-B188-0C708CC27DB2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>790</integer>
+			<integer>785</integer>
 			<key>ypos</key>
 			<integer>600</integer>
 		</dict>
@@ -1452,6 +1598,13 @@
 			<integer>175</integer>
 			<key>ypos</key>
 			<integer>860</integer>
+		</dict>
+		<key>FA766B2C-6C89-4B54-959F-9354AD2A3D3C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>280</integer>
 		</dict>
 		<key>FFE8F463-F16F-45D9-B4A1-A58CF30C88C2</key>
 		<dict>

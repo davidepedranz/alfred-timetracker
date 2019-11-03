@@ -31,6 +31,7 @@ This workflow allows you to leverage Alfred's power to track your work easily.
 | tt stop        | Stop tracking an ongoing task and add it to Google Calendar.        |
 | tt list        | List the ongoing tasks.                                             |
 | tt cancel      | Cancel an ongoing task.                                             |
+| tt track       | Track a new task with already known duration.                       |
 | tt update      | Check if there are updates available.                               |
 
 *Pro trick*: you can omit the `tt` prefix.

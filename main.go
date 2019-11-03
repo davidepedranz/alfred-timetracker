@@ -29,11 +29,12 @@ func run(wf *aw.Workflow) {
 		"cancel":      handler.DoCancel,
 		"deauthorize": handler.DoDeauthorize,
 		"filter":      handler.DoFilter,
+		"install":     handler.DoInstall,
 		"setup":       handler.DoSetup,
 		"start":       handler.DoStart,
 		"stop":        handler.DoStop,
+		"track":       handler.DoTrack,
 		"update":      handler.DoUpdate,
-		"install":     handler.DoInstall,
 	}
 
 	h, found := handlers[args[0]]

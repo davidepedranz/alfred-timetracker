@@ -54,5 +54,6 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
+	// nolint:goconst
 	return "Stored in your calendar 📅", nil
 }
