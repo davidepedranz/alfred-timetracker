@@ -41,7 +41,7 @@ func run(wf *aw.Workflow) {
 		exitWithError("command not recognized 👀")
 	}
 
-	msg, err := h(wf, args[:1])
+	msg, err := h(wf, args[1:])
 	if err != nil {
 		exitWithError(err.Error())
 		os.Exit(1)
