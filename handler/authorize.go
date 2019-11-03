@@ -10,7 +10,7 @@ import (
 )
 
 func DoAuthorize(wf *aw.Workflow, _ []string) (string, error) {
-	config := calendar.NewConfig(wf.Config.GetString(alfred.ClientID))
+	config := calendar.NewConfig(alfred.GetClientID(wf))
 
 	token, err := calendar.GetToken(config)
 	if err != nil {
@@ -22,7 +22,7 @@ func DoAuthorize(wf *aw.Workflow, _ []string) (string, error) {
 		return "", fmt.Errorf("cannot serialize the token to JSON 😢 (%w)", err)
 	}
 
-	if err := alfred.WriteToken(wf, string(b)); err != nil {
+	if err := alfred.SetToken(wf, string(b)); err != nil {
 		return "", fmt.Errorf("cannot store the token in the keychain 😢 (%w)", err)
 	}
 

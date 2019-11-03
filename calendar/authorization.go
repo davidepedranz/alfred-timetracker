@@ -10,13 +10,14 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/davidepedranz/alfred-timetracker/alfred"
 	"github.com/dvsekhvalnov/jose2go/base64url"
 	"github.com/google/uuid"
 	"github.com/pkg/browser"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/calendar/v3"
 )
+
+const port = 36169
 
 type response struct {
 	values url.Values
@@ -27,7 +28,7 @@ func NewConfig(clientID string) *oauth2.Config {
 	return &oauth2.Config{
 		ClientID:     clientID,
 		ClientSecret: "",
-		RedirectURL:  "http://localhost:" + strconv.Itoa(alfred.Port),
+		RedirectURL:  "http://localhost:" + strconv.Itoa(port),
 		Scopes:       []string{calendar.CalendarScope},
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  "https://accounts.google.com/o/oauth2/auth",
@@ -58,7 +59,7 @@ func GetToken(config *oauth2.Config) (*oauth2.Token, error) {
 		return nil, fmt.Errorf("cannot open a browser to handle the authorization flow: %w", err)
 	}
 
-	res := <-callback("127.0.0.1:" + strconv.Itoa(alfred.Port))
+	res := <-callback("127.0.0.1:" + strconv.Itoa(port))
 
 	if errorCode := res.values.Get("error"); errorCode != "" {
 		return nil, fmt.Errorf("the user did not grant the required permissions")

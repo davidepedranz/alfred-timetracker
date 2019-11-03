@@ -9,7 +9,7 @@ import (
 )
 
 func DoDeauthorize(wf *aw.Workflow, _ []string) (string, error) {
-	token, err := alfred.ReadToken(wf)
+	token, err := alfred.GetToken(wf)
 	if err != nil {
 		return "", fmt.Errorf("already deauthorized 👀 (%w)", err)
 	}

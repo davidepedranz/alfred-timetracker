@@ -23,7 +23,7 @@ func NewClient(ctx context.Context, config *oauth2.Config, token *oauth2.Token) 
 	return &Client{service}, nil
 }
 
-func (c *Client) CreateCalendar() (*string, error) {
+func (c *Client) CreateCalendar() (string, error) {
 	cal := &calendar.Calendar{
 		Summary:     "Tracking",
 		Description: "Calendar for time-tracking managed by the Alfred TimeTracker workflow.",
@@ -32,12 +32,10 @@ func (c *Client) CreateCalendar() (*string, error) {
 	created, err := call.Do()
 
 	if err != nil {
-		return nil, err
+		return "", err
 	}
 
-	id := created.Id
-
-	return &id, nil
+	return created.Id, nil
 }
 
 func (c *Client) InsertEvent(calendarID, summary string, start, end *time.Time) error {

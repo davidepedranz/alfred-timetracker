@@ -10,12 +10,12 @@ import (
 )
 
 func DoSetup(wf *aw.Workflow, _ []string) (string, error) {
-	token, err := alfred.ReadToken(wf)
+	token, err := alfred.GetToken(wf)
 	if err != nil {
 		return "", fmt.Errorf("please authorize TimeTracker with `tt authorize` first 👀 (%w)", err)
 	}
 
-	clientID := wf.Config.Get(alfred.ClientID)
+	clientID := alfred.GetClientID(wf)
 	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
 
 	if err != nil {
@@ -27,7 +27,7 @@ func DoSetup(wf *aw.Workflow, _ []string) (string, error) {
 		return "", fmt.Errorf("could not create the calendar, please try again later 🙏 (%w)", err)
 	}
 
-	if err := wf.Config.Set(alfred.CalendarID, *id, false).Do(); err != nil {
+	if err := alfred.SetCalendarID(wf, id); err != nil {
 		return "", fmt.Errorf("cannot save the configuration in Alfred, please try again later 🙏 (%w)", err)
 	}
 

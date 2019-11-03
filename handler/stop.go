@@ -15,12 +15,12 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("please provide some input 👀")
 	}
 
-	token, err := alfred.ReadToken(wf)
+	token, err := alfred.GetToken(wf)
 	if err != nil {
 		return "", fmt.Errorf("please authorize with `tt authorize` first 👀 (%w)", err)
 	}
 
-	calendarID := wf.Config.Get(alfred.CalendarID)
+	calendarID := alfred.GetCalendarID(wf)
 	if calendarID == "" {
 		return "", fmt.Errorf("please setup your tracking calendar with `tt setup` first 👀")
 	}
@@ -40,7 +40,7 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("cannot store the left tasks, please try again later 🙏 (%w)", err)
 	}
 
-	clientID := wf.Config.Get(alfred.ClientID)
+	clientID := alfred.GetClientID(wf)
 	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
 
 	if err != nil {
