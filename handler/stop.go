@@ -35,6 +35,9 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("cannot find the provided task, maybe it was already stopped? 🤨")
 	}
 
+	// the next command will remove the task, so we save it here
+	task := tasks[index]
+
 	remaining := append(tasks[:index], tasks[index+1:]...)
 	if err := alfred.StoreOngoingTasks(wf, remaining); err != nil {
 		return "", fmt.Errorf("cannot store the left tasks, please try again later 🙏 (%w)", err)
@@ -47,9 +50,7 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
-	task := tasks[index]
 	now := time.Now()
-
 	if err := client.InsertEvent(calendarID, task.Description, &task.Start, &now); err != nil {
 		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
