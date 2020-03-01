@@ -81,7 +81,7 @@ func GetToken(config *oauth2.Config) (*oauth2.Token, error) {
 	return token, nil
 }
 
-// nolint:gocognit
+// nolint:gocognit // this function is only slightly more complex than the allowed threshold
 func callback(address string) chan *response {
 	responseCh, shutdownCh, interruptCh := make(chan *response), make(chan bool), make(chan bool)
 	server := &http.Server{Addr: address}
