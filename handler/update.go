@@ -7,7 +7,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-// nolint:unparam
+// nolint:unparam // we are forced to return a constant value to maintain the Handler signature
 func DoUpdate(wf *aw.Workflow, _ []string) (string, error) {
 	log.Println("Checking for updates...")
 

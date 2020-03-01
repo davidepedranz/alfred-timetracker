@@ -55,7 +55,7 @@ func DoTrack(wf *aw.Workflow, args []string) (string, error) {
 		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)
 	}
 
-	// nolint:goconst
+	// nolint:goconst // we are forced to return a constant value to maintain the Handler signature
 	return "Stored in your calendar 📅", nil
 }
 

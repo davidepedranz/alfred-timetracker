@@ -16,7 +16,7 @@ func DoStart(wf *aw.Workflow, args []string) (string, error) {
 
 	task := alfred.Task{ID: uuid.New().String(), Description: args[0], Start: time.Now()}
 
-	// nolint:errcheck
+	// nolint:errcheck // we ignore errors because the file will be overridden in the next step in case of errors
 	tasks, _ := alfred.LoadOngoingTasks(wf)
 	tasks = append(tasks, task)
 

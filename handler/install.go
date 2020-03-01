@@ -6,7 +6,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-// nolint:unparam
+// nolint:unparam // we are forced to return a constant value to maintain the Handler signature
 func DoInstall(wf *aw.Workflow, _ []string) (string, error) {
 	fmt.Print("Downloading update...")
 

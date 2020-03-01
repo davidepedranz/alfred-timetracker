@@ -8,7 +8,7 @@ import (
 	aw "github.com/deanishe/awgo"
 )
 
-// nolint:unparam
+// nolint:unparam // we are forced to return a constant value to maintain the Handler signature
 func DoFilter(wf *aw.Workflow, args []string) (string, error) {
 	if len(args) != 1 {
 		return "", fmt.Errorf("please provide some input 👀")
