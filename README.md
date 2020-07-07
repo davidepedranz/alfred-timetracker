@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/davidepedranz/alfred-timetracker.svg?branch=master)](https://travis-ci.com/davidepedranz/alfred-timetracker)
 [![GolangCI](https://golangci.com/badges/github.com/davidepedranz/alfred-timetracker.svg)](https://golangci.com/r/github.com/davidepedranz/alfred-timetracker)
 
-Track your time on Google Calendar 📅 using Alfred.
+Track your time on Google Calendar 📅 using [Alfred](https://www.alfredapp.com/).
 
 Have you ever asked yourself the question, `What did I do today?`.
 If you did and could not answer, this Alfred workflow is for you.
