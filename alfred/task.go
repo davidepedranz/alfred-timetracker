@@ -16,8 +16,13 @@ type Task struct {
 }
 
 func LoadOngoingTasks(wf *aw.Workflow) ([]Task, error) {
+	// fallback load function doing nothing
+	nop := func() (interface{}, error) {
+		return []Task{}, nil
+	}
+
 	var tasks []Task
-	if err := wf.Data.LoadJSON(ongoingTasks, &tasks); err != nil {
+	if err := wf.Data.LoadOrStoreJSON(ongoingTasks,0, nop, &tasks); err != nil {
 		return nil, fmt.Errorf("error loading the ongoing tasks: %w", err)
 	}
 
