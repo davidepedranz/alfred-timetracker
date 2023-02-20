@@ -1619,7 +1619,9 @@
 		<key>calendar_id</key>
 		<string></string>
 		<key>client_id</key>
-		<string>160770512255-3ctrdnpm2lk1l869146i93r00b6g1g8d.apps.googleusercontent.com</string>
+		<string>160770512255-nactpmojv4ke538darhtts6flqi08cvt.apps.googleusercontent.com</string>
+		<key>client_secret</key>
+		<string></string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>

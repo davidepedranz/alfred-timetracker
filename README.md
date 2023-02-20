@@ -11,7 +11,7 @@ Sometimes we have so many different tasks and interrupt that it is easy to lose 
 You can try to track them manually, but this approach is error-prone, time-consuming, and tedious.
 This workflow allows you to leverage Alfred's power to track your work easily.
 
-*Disclaimer*. The workflow is already working, but it is still under construction. Use it at your own risk ⚡.
+_Disclaimer_. The workflow is already working, but it is still under construction. Use it at your own risk ⚡.
 
 ## Installation
 
@@ -34,11 +34,19 @@ This workflow allows you to leverage Alfred's power to track your work easily.
 | tt track       | Track a new task with already known duration.                       |
 | tt update      | Check if there are updates available.                               |
 
-*Pro trick*: you can omit the `tt` prefix.
+_Pro trick_: you can omit the `tt` prefix.
 
 ## Contribute
 
 If you find any bug or want to propose a new feature, please open an issue to discuss it.
+
+## Security
+
+On February. 2022, Google deprecated the use of Loopback IP addresses on the Chrome OAuth client type.
+The change forced us to migrate to the Desktop OAuth client type.
+Desktop clients require a `client_secret` as part of the OAuth authorization flow, which we need to distribute together as part of the Alfred package.
+Without appropriate protection, an attacker able to sniff HTTP requests on the machine might try to intercept the OAuth `code` and exchange it for a valid `access_token`.
+This project prevents this and similar attacks by implementing the OAuth [Proof Key for Code Exchange (PKCE) extension](https://www.rfc-editor.org/rfc/rfc7636).
 
 ## License
 

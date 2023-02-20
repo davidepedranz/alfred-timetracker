@@ -10,7 +10,10 @@ import (
 )
 
 func DoAuthorize(wf *aw.Workflow, _ []string) (string, error) {
-	config := calendar.NewConfig(alfred.GetClientID(wf))
+	clientID := alfred.GetClientID(wf)
+	clientSecret := alfred.GetClientSecret(wf)
+
+	config := calendar.NewConfig(clientID, clientSecret)
 
 	token, err := calendar.GetToken(config)
 	if err != nil {

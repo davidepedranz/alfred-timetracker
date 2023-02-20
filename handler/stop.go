@@ -44,7 +44,9 @@ func DoStop(wf *aw.Workflow, args []string) (string, error) {
 	}
 
 	clientID := alfred.GetClientID(wf)
-	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID), token)
+	clientSecret := alfred.GetClientSecret(wf)
+
+	client, err := calendar.NewClient(context.Background(), calendar.NewConfig(clientID, clientSecret), token)
 
 	if err != nil {
 		return "", fmt.Errorf("something wrong happened, please try again later 🙏 (%w)", err)

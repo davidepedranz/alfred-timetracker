@@ -24,10 +24,10 @@ type response struct {
 	err    error
 }
 
-func NewConfig(clientID string) *oauth2.Config {
+func NewConfig(clientID string, clientSecret string) *oauth2.Config {
 	return &oauth2.Config{
 		ClientID:     clientID,
-		ClientSecret: "",
+		ClientSecret: clientSecret,
 		RedirectURL:  "http://localhost:" + strconv.Itoa(port),
 		Scopes:       []string{calendar.CalendarScope},
 		Endpoint: oauth2.Endpoint{
