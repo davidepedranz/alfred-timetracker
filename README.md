@@ -8,10 +8,8 @@ Track your time on Google Calendar 📅 using [Alfred](https://www.alfredapp.com
 Have you ever asked yourself the question, `What did I do today?`.
 If you did and could not answer, this Alfred workflow is for you.
 Sometimes we have so many different tasks and interrupt that it is easy to lose track.
-You can try to track them manually, but this approach is error-prone, time-consuming, and tedious.
-This workflow allows you to leverage Alfred's power to track your work easily.
-
-_Disclaimer_. The workflow is already working, but it is still under construction. Use it at your own risk ⚡.
+You can track them manually, but this approach is error-prone, time-consuming, and tedious.
+This workflow lets you to leverage Alfred's power to track your work easily.
 
 ## Installation
 
@@ -38,7 +36,7 @@ _Pro trick_: you can omit the `tt` prefix.
 
 ## Contribute
 
-If you find any bug or want to propose a new feature, please open an issue to discuss it.
+If you find any bugs or want to propose a new feature, please open an issue to discuss it.
 
 ## Security
 
