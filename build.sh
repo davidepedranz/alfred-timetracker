@@ -5,8 +5,9 @@ set -o nounset
 
 archive="TimeTracker-${VERSION}.alfredworkflow"
 
-echo "Building go binary:"
-GOARCH=amd64 GOOS=darwin go build -ldflags "-s -w" -o ".workflow/tt" .
+echo "Building go binaries:"
+GOARCH=amd64 GOOS=darwin go build -ldflags "-s -w" -o ".workflow/tt-amd64" .
+GOARCH=arm64 GOOS=darwin go build -ldflags "-s -w" -o ".workflow/tt-arm64" .
 
 echo ""
 echo "Crearing archive:"

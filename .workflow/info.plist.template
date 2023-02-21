@@ -413,7 +413,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -462,7 +462,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -512,7 +512,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt stop "$1"</string>
+				<string>./tt.sh stop "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -535,7 +535,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt start "$1"</string>
+				<string>./tt.sh start "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -599,7 +599,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -669,7 +669,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -739,7 +739,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -789,7 +789,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt cancel "$1"</string>
+				<string>./tt.sh cancel "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -833,7 +833,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt track "$1"</string>
+				<string>./tt.sh track "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -897,7 +897,7 @@
 				<key>runningsubtext</key>
 				<string>Loading tasks...</string>
 				<key>script</key>
-				<string>./tt filter "$1"</string>
+				<string>./tt.sh filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -968,7 +968,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt authorize "$1"</string>
+				<string>./tt.sh authorize "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1033,7 +1033,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt deauthorize "$1"</string>
+				<string>./tt.sh deauthorize "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1160,7 +1160,7 @@
 				<key>runningsubtext</key>
 				<string>Looking for updates...</string>
 				<key>script</key>
-				<string>./tt update</string>
+				<string>./tt.sh update</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1210,7 +1210,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt setup "$1"</string>
+				<string>./tt.sh setup "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1271,7 +1271,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./tt install</string>
+				<string>./tt.sh install</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1335,7 +1335,7 @@
 				<key>runningsubtext</key>
 				<string>Looking for updates...</string>
 				<key>script</key>
-				<string>./tt update</string>
+				<string>./tt.sh update</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
