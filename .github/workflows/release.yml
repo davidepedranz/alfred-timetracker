@@ -1,0 +1,33 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"  
+
+jobs:
+  test-and-release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    env:
+      TIMETRACKER_VERSION: ${{ github.ref_name }}
+    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Test Go
+        run: go test -v ./...
+      - name: Build Alfred workflow
+        run: ./build.sh
+        env:
+          TIMETRACKER_VERSION: ${{ github.ref_name }}
+      - name: Release to GitHub
+        uses: softprops/action-gh-release@v1
+        with:
+          files: TimeTracker-${{ github.ref_name }}.alfredworkflow

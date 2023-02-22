@@ -1628,7 +1628,7 @@
 		<string>calendar_id</string>
 	</array>
 	<key>version</key>
-	<string>${VERSION}</string>
+	<string>${TIMETRACKER_VERSION_WITHOUT_PREFIX}</string>
 	<key>webaddress</key>
 	<string>https://github.com/davidepedranz/alfred-timetracker</string>
 </dict>
