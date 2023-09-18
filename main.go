@@ -25,16 +25,17 @@ func run(wf *aw.Workflow) {
 	}
 
 	handlers := map[string]func(*aw.Workflow, []string) (string, error){
-		"authorize":   handler.DoAuthorize,
-		"cancel":      handler.DoCancel,
-		"deauthorize": handler.DoDeauthorize,
-		"filter":      handler.DoFilter,
-		"install":     handler.DoInstall,
-		"setup":       handler.DoSetup,
-		"start":       handler.DoStart,
-		"stop":        handler.DoStop,
-		"track":       handler.DoTrack,
-		"update":      handler.DoUpdate,
+		"authorize":      handler.DoAuthorize,
+		"cancel":         handler.DoCancel,
+		"deauthorize":    handler.DoDeauthorize,
+		"filter-ongoing": handler.DoFilterOngoing,
+		"filter-past":    handler.DoFilterPast,
+		"install":        handler.DoInstall,
+		"setup":          handler.DoSetup,
+		"start":          handler.DoStart,
+		"stop":           handler.DoStop,
+		"track":          handler.DoTrack,
+		"update":         handler.DoUpdate,
 	}
 
 	h, found := handlers[args[0]]
